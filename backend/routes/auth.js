@@ -32,7 +32,7 @@ router.post('/register', validateInfo, async (req, res) => {
 
 	} catch (error) {
 		res.status(500).json({ error: 'Internal Server Error' });
-		console.log("Error in register route ", error.message);
+		console.error("Error in register route ", error.message);
 	}
 })
 
@@ -59,7 +59,7 @@ router.post('/login', validateInfo, async (req, res) => {
 
 	} catch (error) {
 		res.status(500).json({ error: 'Internal Server Error' });
-		console.log("Error in login route ", error.message);
+		console.error("Error in login route ", error.message);
 	}
 })
 
@@ -70,7 +70,7 @@ router.get('/verify', authMiddleware, async (req, res) => {
 		res.json(true);
 	} catch (error) {
 		res.status(500).json({ error: 'Internal Server Error' });
-		console.log("Error in verify route ", error.message);
+		console.error("Error in verify route ", error.message);
 	}
 });
 
